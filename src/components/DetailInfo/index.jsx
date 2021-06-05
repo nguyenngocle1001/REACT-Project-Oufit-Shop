@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { InputNumber, Rate } from "antd";
 import "./style.scss";
@@ -6,11 +6,32 @@ import { useFormatPrice } from "../../hooks/useFormatPrice";
 
 DetailInfo.propTypes = {
   product: PropTypes.object.isRequired,
+  onAddToCart: PropTypes.func,
+};
+
+DetailInfo.defaultProps = {
+  product: {},
+  onAddToCart: null,
 };
 
 function DetailInfo(props) {
-  const { product } = props;
+  const { product, onAddToCart } = props;
   const formatPrice = useFormatPrice();
+  const [quantity, setQuantity] = useState(1);
+  console.log("quantity :>> ", quantity);
+
+  const handleAddToCart = () => {
+    const productValues = {
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      quantity: quantity,
+    };
+
+    if (onAddToCart) onAddToCart(productValues);
+  };
+
   return (
     <div className="detail-info">
       <p className="detail-info__brand">{product.brand}</p>
@@ -21,8 +42,11 @@ function DetailInfo(props) {
         <InputNumber
           className="detail-info__quantity__input"
           min={1}
-          max={10}
-          defaultValue={3}
+          max={100}
+          value="1"
+          onChange={(value) => {
+            setQuantity(value === null ? 1 : value);
+          }}
         />
       </div>
       <div className="detail-info__rating">
@@ -41,7 +65,9 @@ function DetailInfo(props) {
           dangerouslySetInnerHTML={{ __html: product.desc }}
         ></p>
       </div>
-      <button className="detail-info__btn">Thêm vào giỏ</button>
+      <button className="detail-info__btn" onClick={handleAddToCart}>
+        Thêm vào giỏ
+      </button>
     </div>
   );
 }

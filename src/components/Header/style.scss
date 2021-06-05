@@ -1,9 +1,49 @@
+@import '../../assets/responsive/index.scss';
 .header {
     background-color: var(--black-color);
     padding: 15px 0;
 
-    &__logo {
+    @include lessDesktop {
+        position: relative;
+    }
 
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            position: relative;
+            display: block;
+
+            color: var(--white-color);
+            background-color: transparent;
+
+            font-size: 1.3rem;
+
+            outline: none;
+            border: none;
+            cursor: pointer;
+
+            transition: all linear .25s;
+
+            @include lessDesktop {
+                position: unset;
+            }
+
+            &:hover {
+                color: var(--primary-color);
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &__logo {
         color: var(--gray-color);
 
         font-size: 1.8rem;
@@ -18,27 +58,44 @@
             color: var(--primary-color);
         }
     }
-
+    #showSearchMobile:checked ~ &__search {
+        display: flex;
+    }
     &__search {
         width: 100%;
         height: 35px;
+
         padding: 10px;
+        margin: 0 1rem;
 
         background-color: var(--white-color);
 
         display: flex;
         align-items: center;
 
-        border: 1px solid color(--gray-color);
         border-radius: 2px;
         outline: none;
 
+        animation: showSearch linear 0.25s;
+
+        @include mobile {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+
+            width: unset;
+            overflow: hidden;
+
+            display: none;
+        }
+
         &__input {
+            flex: 1;
+
             background-color: transparent;
 
             font-size: 0.8rem;
-
-            flex: 1;
 
             border: none;
             outline: none;
@@ -46,13 +103,14 @@
 
         &__btn {
             background-color: transparent;
+            color: var(--black-color);
 
             border: none;
             outline: none;
             
-            color: var(--black-color);
             
             font-size: 1.3rem;
+            line-height: 100%;
 
             transition: all 0.25s linear;
 
@@ -62,30 +120,21 @@
                 
                 border-radius: 2px;
             }
-        }
-    }
 
-    &__action {
-        color: var(--white-color);
-        background-color: transparent;
-
-        font-size: 1.3rem;
-
-        outline: none;
-        border: none;
-
-        transition: all linear .25s;
-
-        &:hover {
-            color: var(--primary-color);
-            background: var(--gray-color);
-
-            border-radius: 2px;
+            &--mobile {
+                color: #fff;
+            }
         }
     }
 
     &__cart {
         position: relative;
+
+        margin: 0 10px 0;
+
+        @include mobile {
+            margin: 0 10px;
+        }
     
         &__number {
             width: 20px;
@@ -105,5 +154,14 @@
 
             border-radius: 50%;
         }
+    }
+}
+
+@keyframes showSearch {
+    from {
+    transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(0%);
     }
 }

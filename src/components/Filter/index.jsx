@@ -57,7 +57,7 @@ function Filter(props) {
                 <input
                   type="checkbox"
                   id={brand.id}
-                  className="filter__group__checkbox"
+                  className="lessDesktop filter__group__checkbox"
                   onClick={() => {
                     handleOnBrandId(brand.id);
                   }}

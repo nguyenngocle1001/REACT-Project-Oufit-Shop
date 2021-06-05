@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Col, Container, Row } from "reactstrap";
 import { NavLink, useHistory } from "react-router-dom";
@@ -32,43 +32,52 @@ function Header(props) {
   return (
     <header className="header">
       <Container>
-        <Row>
-          <Col xs="auto">
-            <NavLink to="/" className="header__logo">
-              Lexe
-            </NavLink>
-          </Col>
-          <Col className="d-flex align-items-center">
-            <form className="header__search" onSubmit={handleOnSearch}>
-              <input
-                type="text"
-                className="header__search__input"
-                placeholder="Tìm sản phẩm ..."
-                name="searchTerm"
-              />
-              <button className="header__search__btn">
-                <AiOutlineSearch />
-              </button>
-            </form>
-          </Col>
-          <Col xs="auto" className="d-flex align-items-center">
-            <button className="header__cart header__action">
-              <AiOutlineShoppingCart />
-              <span className="header__cart__number">
-                {listProductCart.length}
-              </span>
+        <div className="header__container">
+          <NavLink to="/" className="header__logo">
+            Lexe
+          </NavLink>
+          <input type="checkbox" name="" id="showSearchMobile" hidden />
+          <form
+            className="header__search"
+            onSubmit={handleOnSearch}
+            autoComplete="off"
+          >
+            <input
+              type="text"
+              className="header__search__input"
+              placeholder="Tìm sản phẩm ..."
+              name="searchTerm"
+            />
+            <button className="header__search__btn">
+              <AiOutlineSearch />
+            </button>
+          </form>
+
+          <div className="header__action">
+            <label
+              htmlFor="showSearchMobile"
+              className="mobile header__action__item"
+            >
+              <AiOutlineSearch />
+            </label>
+
+            <button className="header__action__item">
+              <div className="header__cart">
+                <AiOutlineShoppingCart />
+                <span className="header__cart__number">
+                  {listProductCart.length}
+                </span>
+              </div>
               <MiniCart
                 listProduct={listProductCart}
                 onRemoveProductCart={onRemoveProductCart}
               />
             </button>
-          </Col>
-          <Col xs="auto" className="d-flex align-items-center">
-            <button className="header__account header__action">
+            <button className="header__account header__action__item">
               <FiUser />
             </button>
-          </Col>
-        </Row>
+          </div>
+        </div>
       </Container>
     </header>
   );

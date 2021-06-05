@@ -137,10 +137,10 @@ function ProductPage(props) {
       <Banner />
       <Container className="mt-2">
         <Row>
-          <Col lg="3">
+          <Col lg="3" md="3">
             <Filter brands={brands} onFilterChange={handleFilterChange} />
           </Col>
-          <Col lg="9">
+          <Col lg="9" md="9">
             {searchTerm && (
               <ResultSearch
                 onRemoveSearch={onRemoveSearch}

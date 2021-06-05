@@ -1,3 +1,4 @@
+@import '../../assets/responsive/index.scss';
 @keyframes miniCart {
     from {
         opacity: 0;
@@ -11,7 +12,7 @@
     }
 }
 
-.header__cart:hover .mini-cart{
+.header__cart:hover ~ .mini-cart{
     display: block;
 }
 .mini-cart {
@@ -37,6 +38,13 @@
 
     animation: miniCart linear 0.25s;
 
+    @include lessDesktop {
+        top: 100%;
+        left: 1%;
+        right: 1%;
+        width: unset;
+    }
+
     &__empty {
         text-align: center;
         cursor: default;
@@ -45,6 +53,7 @@
         &>img {
             margin: 0;
             padding: 0;
+            width: 10%;
             
         }
 

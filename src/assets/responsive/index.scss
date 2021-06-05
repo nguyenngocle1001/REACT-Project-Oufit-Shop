@@ -1,0 +1,35 @@
+$sm-with: 576px;
+
+@mixin mobile { @media (max-width: #{$sm-with - 1px}) {     
+  @content;   
+ } 
+}  
+
+@mixin tablet {@media (min-width: #{$sm-with}) {     
+    @content;   
+   } 
+}  
+
+@mixin lessDesktop {@media (max-width: 766px) {     
+    @content;   
+   } 
+}  
+
+.mobile {
+    @include tablet {     
+        display: none !important; 
+    } 
+};
+
+
+.tablet {
+    @include mobile {     
+        display: none !important;
+    } 
+}
+
+.lessDesktop {
+    @include lessDesktop() {     
+        display: none !important;
+    } 
+}

@@ -1,9 +1,11 @@
+@import '../../assets/responsive/index.scss';
 $sort-item-height: 30px;
 
 .sort {
     display: flex;
     align-items: center;
     justify-content: end;
+    flex-wrap: wrap;
 
     background: var(--gray-color);
     padding: 10px;
@@ -47,7 +49,6 @@ $sort-item-height: 30px;
     }
 
     &__price {
-
         width: 200px;
         height: $sort-item-height;
 
@@ -114,6 +115,9 @@ $sort-item-height: 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include mobile {
+                flex: 1;
+            }
 
             &:hover {
                 color: var(--primary-color);
