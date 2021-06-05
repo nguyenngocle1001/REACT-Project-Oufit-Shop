@@ -1,0 +1,19 @@
+.banner {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ccc;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        color: var(--white-color);
+
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+}

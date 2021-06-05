@@ -1,7 +1,15 @@
 # WELCOME TO OUTFIT-SHOP
 
-###### project include reactstrap, axios, context API
+## Libs:
 
-```Dev by Lexe
+##### Axios, query-string
 
-```
+## Libs UI
+
+##### reactstrap, react-icon
+
+## Deploy surge
+
+##### url: outfit-lexe-shop.surge.sh
+
+#### syntax: surge . outfit-lexe-shop.surge.sh

@@ -1,0 +1,135 @@
+$sort-item-height: 30px;
+
+.sort {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    background: var(--gray-color);
+    padding: 10px;
+    
+    border-radius: 2px;
+
+    user-select: none;
+
+    &__name {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        list-style: none;
+        
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        background-color: #fff;
+        margin: 0 5px;
+        border-radius: 2px;
+
+        &.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    }
+
+    &__btn {
+        border: none;
+        outline: none;
+        height: $sort-item-height;
+
+        background: transparent;
+    }
+
+    &__price {
+
+        width: 200px;
+        height: $sort-item-height;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 0;
+        padding: 0 10px;
+
+        line-height: $sort-item-height;
+
+        position: relative;
+
+        cursor: pointer;
+
+        &__icon {
+            transition:  all linear 0.25s;
+        }
+
+        &:hover &__icon{
+            transform: rotate(180deg);
+        }
+
+        &:hover &__list {
+            display: block;
+        }
+
+        
+        &__list {
+            display: none;
+            position: absolute;
+            top: 105%;
+            left: 0;
+            right: 0;
+
+            background-color: #fff;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            border-radius: 2px;
+            box-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.2);
+
+            &::before {
+                content: "";
+                display: block;
+
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                right: 0;
+                height: 10px;
+            }
+        }
+
+        &__item {
+            padding: 5px 10px;
+            transition: all linear 0.25s;
+            color: var(--black-color);
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+
+            &__icon {
+                display: none;
+            }
+
+            &.active &__icon {
+                display: block;
+            }
+
+            &.active {
+                color: var(--primary-color);
+            }
+        }
+    }
+}

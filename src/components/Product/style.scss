@@ -1,0 +1,80 @@
+.product {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 2px;
+
+    box-shadow: 0px 2px 2px rgba($color: #000000, $alpha: 0.2);
+    
+    &:hover &__image {
+        background-size: 120%;
+    }
+
+    &__image {
+        padding-top: 200px;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        transition: all linear 0.25s;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+        color: var(--black-color);
+        font-size: 1rem;
+
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    &__brand {
+        color: var(--gray-color);
+
+        text-align: center;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__price {
+        text-align: center;
+        font-weight: 500;
+        color: var(--black-color);
+        font-size: 1.1rem;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    &__rating{
+        display: block;
+        text-align: center;
+        font-size: .8rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+
+    &__btn {
+        width: 100%;
+
+        padding: 5px 0;
+
+        border: none;
+        outline: none;
+        border-radius: 2px;
+
+        color: var(--white-color);
+        background-color: var(--primary-color);
+
+        transition: all linear 0.25s;
+
+        &:hover {
+            background-color: var(--black-color);
+            color: var(--primary-color);
+        }
+    }
+}

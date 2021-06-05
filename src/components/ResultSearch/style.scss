@@ -1,0 +1,33 @@
+.result-search{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    &__heading {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+        margin-right: 5px;
+    }
+
+    &__item {
+        & > button {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: red;
+        }
+    }
+
+    &__btn {
+        color: red;
+        background: transparent;
+
+        border: none;
+        outline: none;
+
+        margin: 0;
+        padding: 0;
+
+        margin-left: auto;
+    }
+}

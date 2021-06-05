@@ -1,0 +1,109 @@
+.header {
+    background-color: var(--black-color);
+    padding: 15px 0;
+
+    &__logo {
+
+        color: var(--gray-color);
+
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-decoration: none;
+        
+        transition: all linear 0.25s;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    &__search {
+        width: 100%;
+        height: 35px;
+        padding: 10px;
+
+        background-color: var(--white-color);
+
+        display: flex;
+        align-items: center;
+
+        border: 1px solid color(--gray-color);
+        border-radius: 2px;
+        outline: none;
+
+        &__input {
+            background-color: transparent;
+
+            font-size: 0.8rem;
+
+            flex: 1;
+
+            border: none;
+            outline: none;
+        }
+
+        &__btn {
+            background-color: transparent;
+
+            border: none;
+            outline: none;
+            
+            color: var(--black-color);
+            
+            font-size: 1.3rem;
+
+            transition: all 0.25s linear;
+
+            &:hover {
+                color: var(--primary-color);
+                background: var(--gray-color);
+                
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &__action {
+        color: var(--white-color);
+        background-color: transparent;
+
+        font-size: 1.3rem;
+
+        outline: none;
+        border: none;
+
+        transition: all linear .25s;
+
+        &:hover {
+            color: var(--primary-color);
+            background: var(--gray-color);
+
+            border-radius: 2px;
+        }
+    }
+
+    &__cart {
+        position: relative;
+    
+        &__number {
+            width: 20px;
+            height: 20px;
+
+            font-size: 1rem;
+            text-align: center;
+            line-height: 20px;
+            
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(40%);
+
+            background-color: var(--white-color);
+            color: var(--black-color);
+
+            border-radius: 50%;
+        }
+    }
+}

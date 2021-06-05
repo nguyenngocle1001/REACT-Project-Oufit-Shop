@@ -1,0 +1,24 @@
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+:root {
+    // --primary-color: #6a69f5 ;
+    --primary-color: #5abad0 ;
+    --black-dark-color: #262d40;
+    --gray-color: #cdced2;
+    --white-color: #f7f7f7;
+    --black-color: #272532;
+}
+
+.form-error {
+    color: #df4957;
+
+    font-size: 0.9rem;
+    font-style: italic;
+
+    display: block;
+    padding: 5px 0;
+
+}

@@ -1,0 +1,50 @@
+.filter {
+    &__group {
+        margin: 20px 0;
+        border-bottom: 1px solid #ccc;
+
+        &:last-child {
+            border: none;
+        }
+
+        &__checkbox {
+            margin-right: 5px;
+        }
+
+        &__name {
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        &__list {
+            list-style: none;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        &__item {
+            text-transform: capitalize;
+            padding: 5px 10px;
+            margin: 5px 0;
+            
+            transition: all linear 0.25s;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+
+            &.active {
+                color: var(--primary-color);
+            }
+
+            &--rating {
+                color: #ffb820;
+            }
+        }
+    }
+}

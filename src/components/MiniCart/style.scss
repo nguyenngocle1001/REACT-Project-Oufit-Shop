@@ -1,0 +1,214 @@
+@keyframes miniCart {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+
+    }
+}
+
+.header__cart:hover .mini-cart{
+    display: block;
+}
+.mini-cart {
+    display: none;
+
+    position: absolute;
+    right: 0;
+    top: 100%;
+    
+    width: 500px;
+
+    background-color: #fff;
+    color: var(--black-color);
+
+    text-align: left;
+    padding: 0;
+
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.25);
+
+    z-index: 2;
+
+    animation: miniCart linear 0.25s;
+
+    &__empty {
+        text-align: center;
+        cursor: default;
+        padding: 20px 0;
+
+        &>img {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        &__text {
+            padding: 0;
+            margin: 0;
+
+            font-size: 1rem;
+        }
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        min-height: 200px;
+        
+        &__heading {
+
+            color: var(--gray-color);
+
+            font-size: 0.9rem;
+            font-weight: 400;
+
+            margin: 0;
+            padding: 10px;
+        }
+
+        &__list {
+            list-style: none;
+
+            margin: 0;
+            padding: 0;
+
+            max-height: 300px;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                background-color: var(--gray-color);
+                width: 5px;
+
+                box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.25);
+                padding: 2px;
+            }
+
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--primary-color);
+                border-radius: 5px;
+
+            }
+        }
+
+        &__item {
+            transition: all linear 0.25s;
+
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background-color: var(--white-color);
+            }
+
+            &:hover &__btn {
+                transform: translateX(0);
+            }
+
+            &__btn {
+                width: 30px;
+
+                background: transparent;
+                border: none;
+                outline: none;
+
+                color: red;
+
+                overflow: hidden;
+
+                border-left: 1px solid #ccc;
+                padding-left: 5px;
+
+                transform: translateX(100%);
+                transition: all linear 0.25s;
+            }
+        }
+
+
+
+        $product-height: 50px;
+
+        &__product {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            height: $product-height;
+
+            padding: 5px 10px;
+
+            &__image{
+                width: $product-height;
+                height: 100%;
+                
+                background-size: contain;
+                background-position: center;
+            }
+
+            &__desc {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                flex: 1;
+
+                margin: 0 5px;
+            }
+
+            &__name {
+                font-size: 0.9rem;
+
+                padding: 0;
+                margin: 0;
+            }
+
+            &__quantity {
+                padding: 0;
+                margin: 0;
+
+                font-size: .9rem;
+            }
+
+            &__price {
+                font-size: 1rem;
+                margin: 0;
+
+                color: var(--primary-color);
+            }
+        }
+
+        &__action {
+            background-color: var(--white-color);
+
+            margin-top: auto;
+            padding: 10px;
+        }
+
+        &__btn {
+
+            padding: 8px 20px;
+            border-radius: 2px;
+            
+
+            font-size: 0.9rem;
+            
+            background-color: var(--primary-color);
+            color: #fff;
+
+            &:hover {
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+        
+    }
+    
+}
