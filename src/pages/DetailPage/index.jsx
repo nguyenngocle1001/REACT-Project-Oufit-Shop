@@ -20,6 +20,11 @@ function DetailPage(props) {
     if (product) dispatch(addProduct(product));
   };
 
+  //set title
+  useEffect(() => {
+    document.title = `Sản phẩm ${product.name}`;
+  }, [product]);
+
   //get product by id
   useEffect(() => {
     const fetchProduct = async () => {

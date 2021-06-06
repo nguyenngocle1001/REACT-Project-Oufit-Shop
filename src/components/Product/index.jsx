@@ -37,10 +37,12 @@ function Product(props) {
 
   return (
     <div className="product">
-      <div
-        className="product__image"
-        style={{ backgroundImage: `url(${product.image})` }}
-      ></div>
+      <div className="product__image__box">
+        <div
+          className="product__image"
+          style={{ backgroundImage: `url(${product.image})` }}
+        ></div>
+      </div>
       <Link to={`/products/${product.id}`} className="product__name">
         {product.name}
       </Link>

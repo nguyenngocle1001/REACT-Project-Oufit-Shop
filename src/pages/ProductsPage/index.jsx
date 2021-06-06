@@ -43,6 +43,10 @@ function ProductPage(props) {
 
   const [sortData, setSortData] = useState({});
 
+  useEffect(() => {
+    document.title = "Sản phẩm";
+  }, []);
+
   //dispatch get productList
   useEffect(() => {
     let params = {

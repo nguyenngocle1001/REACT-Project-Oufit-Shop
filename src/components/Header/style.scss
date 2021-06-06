@@ -84,6 +84,8 @@
             left: 0;
             right: 0;
 
+            height: 40px;
+
             width: unset;
             overflow: hidden;
 
@@ -99,6 +101,8 @@
 
             border: none;
             outline: none;
+
+            height: 100%;
         }
 
         &__btn {
