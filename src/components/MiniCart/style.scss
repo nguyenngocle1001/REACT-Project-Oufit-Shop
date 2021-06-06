@@ -12,10 +12,13 @@
     }
 }
 
-.header__cart:hover ~ .mini-cart{
+.header__action__item:hover .mini-cart{
     display: block;
+
+    
 }
 .mini-cart {
+
     display: none;
 
     position: absolute;
